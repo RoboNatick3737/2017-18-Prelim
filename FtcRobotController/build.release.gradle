@@ -1,0 +1,9 @@
+dependencies {
+    compile project(':RobotCore')
+    compile project(':Inspection')
+    compile project(':Hardware')
+    compile project(':FtcCommon')
+    compile project(':openCVLibrary330')
+    compile (name:'WirelessP2p-release', ext:'aar')
+    compile project(':OpenFTC')
+}
