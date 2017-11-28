@@ -2,12 +2,15 @@ package org.firstinspires.ftc.teamcode.programs.prelimbot;
 
 import android.hardware.Sensor;
 
+import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cRangeSensor;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 
+
+import org.firstinspires.ftc.teamcode.hardware.HankuTankuRange;
 
 import hankextensions.Core;
 
@@ -22,7 +25,7 @@ public abstract class HardwareBase extends Core
     protected DcMotor left, right, middle, miniLift, primaryLift;
     protected Servo topLeftGrabber, topRightGrabber, bottomLeftGrabber, bottomRightGrabber, swingServo;
     protected ColorSensor colorSensor;
-    protected DistanceSensor rangeSensor;
+    protected HankuTankuRange rangeSensor;
 
     // Constants to open and close grabber clamps.
     private static final double
@@ -62,9 +65,9 @@ public abstract class HardwareBase extends Core
 
         swingServo         = initHardwareDevice(Servo.class, "Swing Servo");
 
-        colorSensor        = initHardwareDevice(ColorSensor.class, "Color Sensor");
+        //colorSensor        = initHardwareDevice(ColorSensor.class, "Color Sensor");
 
-        rangeSensor        = initHardwareDevice(DistanceSensor.class, "Range Sensor");
+        rangeSensor        = new HankuTankuRange(initHardwareDevice(ModernRoboticsI2cRangeSensor.class, "Range Sensor"));
 
         right.setDirection(DcMotorSimple.Direction.REVERSE);
     }
