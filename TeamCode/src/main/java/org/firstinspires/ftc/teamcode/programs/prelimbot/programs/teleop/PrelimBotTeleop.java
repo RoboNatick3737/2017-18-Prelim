@@ -40,7 +40,7 @@ public class PrelimBotTeleop extends HardwareBase
         if (gamepad1.y && (System.currentTimeMillis() - lastTopClampAdjustment) > 400)
         {
             topClampsClosed = !topClampsClosed;
-            setTopClampsTo(!topClampsClosed);
+            openTopClamps(!topClampsClosed);
             lastTopClampAdjustment = System.currentTimeMillis();
         }
 
@@ -48,7 +48,7 @@ public class PrelimBotTeleop extends HardwareBase
         if (gamepad1.a && (System.currentTimeMillis() - lastBottomClampAdjustment) > 400)
         {
             bottomClampsClosed = !bottomClampsClosed;
-            setBottomClampsTo(!bottomClampsClosed);
+            openBottomClamps(!bottomClampsClosed);
             lastBottomClampAdjustment = System.currentTimeMillis();
         }
     }

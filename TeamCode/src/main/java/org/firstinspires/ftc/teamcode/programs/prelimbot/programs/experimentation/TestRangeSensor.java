@@ -19,7 +19,8 @@ public class TestRangeSensor extends HardwareBase
 
         while (true)
         {
-            processConsole.write("Range Sensor Val: " + rangeSensor.sensor.cmUltrasonic());
+            //processConsole.write("Range Sensor Val: " + rangeSensor.sensor.cmUltrasonic());
+            processConsole.write("Range Sensor Val: " + rangeSensor.rawOptical());
             Flow.yield();
         }
     }

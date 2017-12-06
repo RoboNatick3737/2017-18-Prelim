@@ -26,6 +26,6 @@ public class BlueNonPicSide extends BaseAuto
     @Override
     protected void START() throws InterruptedException
     {
-
+        drive(Direction.FORWARD, 2000);
     }
 }

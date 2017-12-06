@@ -25,7 +25,7 @@ public abstract class HardwareBase extends Core
     protected DcMotor left, right, middle, miniLift, primaryLift;
     protected Servo topLeftGrabber, topRightGrabber, bottomLeftGrabber, bottomRightGrabber, swingServo;
     protected ColorSensor colorSensor;
-    protected HankuTankuRange rangeSensor;
+    protected ModernRoboticsI2cRangeSensor rangeSensor;
 
     // Constants to open and close grabber clamps.
     private static final double
@@ -34,24 +34,23 @@ public abstract class HardwareBase extends Core
             BOTTOM_LEFT_OPEN  = 0, BOTTOM_LEFT_CLOSED = .7,
             BOTTOM_RIGHT_OPEN = .8, BOTTOM_RIGHT_CLOSED = .1;
 
-    //Other motors
 
-    protected void setTopClampsTo(boolean open)
+    protected void openTopClamps(boolean pos)
     {
-        topLeftGrabber.setPosition(open ? TOP_LEFT_OPEN : TOP_LEFT_CLOSED);
-        topRightGrabber.setPosition(open ? TOP_RIGHT_OPEN : TOP_RIGHT_CLOSED);
+        topLeftGrabber.setPosition(pos ? TOP_LEFT_OPEN : TOP_LEFT_CLOSED);
+        topRightGrabber.setPosition(pos ? TOP_RIGHT_OPEN : TOP_RIGHT_CLOSED);
     }
 
-    protected void setBottomClampsTo(boolean open)
+    protected void openBottomClamps(boolean pos)
     {
-        bottomLeftGrabber.setPosition(open ? BOTTOM_LEFT_OPEN : BOTTOM_LEFT_CLOSED);
-        bottomRightGrabber.setPosition(open ? BOTTOM_RIGHT_OPEN : BOTTOM_RIGHT_CLOSED);
+        bottomLeftGrabber.setPosition(pos ? BOTTOM_LEFT_OPEN : BOTTOM_LEFT_CLOSED);
+        bottomRightGrabber.setPosition(pos ? BOTTOM_RIGHT_OPEN : BOTTOM_RIGHT_CLOSED);
     }
 
     @Override
     protected void HARDWARE() throws InterruptedException
     {
-        left               = initHardwareDevice(DcMotor.class, "Left");
+        /*left               = initHardwareDevice(DcMotor.class, "Left");
         right              = initHardwareDevice(DcMotor.class, "Right");
         middle             = initHardwareDevice(DcMotor.class, "Middle");
 
@@ -63,12 +62,13 @@ public abstract class HardwareBase extends Core
         bottomLeftGrabber  = initHardwareDevice(Servo.class, "Bottom Left");
         bottomRightGrabber = initHardwareDevice(Servo.class, "Bottom Right");
 
-        swingServo         = initHardwareDevice(Servo.class, "Swing Servo");
+        swingServo         = initHardwareDevice(Servo.class, "Swing Servo");*/
 
         //colorSensor        = initHardwareDevice(ColorSensor.class, "Color Sensor");
 
-        rangeSensor        = new HankuTankuRange(initHardwareDevice(ModernRoboticsI2cRangeSensor.class, "Range Sensor"));
+        //rangeSensor        = new HankuTankuRange(initHardwareDevice(ModernRoboticsI2cRangeSensor.class, "Range Sensor"));
+        rangeSensor        = initHardwareDevice(ModernRoboticsI2cRangeSensor.class, "Range Sensor");
 
-        right.setDirection(DcMotorSimple.Direction.REVERSE);
+        //right.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 }
