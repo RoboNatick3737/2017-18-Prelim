@@ -50,7 +50,7 @@ public abstract class HardwareBase extends Core
     @Override
     protected void HARDWARE() throws InterruptedException
     {
-        /*left               = initHardwareDevice(DcMotor.class, "Left");
+        left               = initHardwareDevice(DcMotor.class, "Left");
         right              = initHardwareDevice(DcMotor.class, "Right");
         middle             = initHardwareDevice(DcMotor.class, "Middle");
 
@@ -62,11 +62,10 @@ public abstract class HardwareBase extends Core
         bottomLeftGrabber  = initHardwareDevice(Servo.class, "Bottom Left");
         bottomRightGrabber = initHardwareDevice(Servo.class, "Bottom Right");
 
-        swingServo         = initHardwareDevice(Servo.class, "Swing Servo");*/
+        swingServo         = initHardwareDevice(Servo.class, "Swing Servo");
 
-        //colorSensor        = initHardwareDevice(ColorSensor.class, "Color Sensor");
+        colorSensor        = initHardwareDevice(ColorSensor.class, "Color Sensor");
 
-        //rangeSensor        = new HankuTankuRange(initHardwareDevice(ModernRoboticsI2cRangeSensor.class, "Range Sensor"));
         rangeSensor        = initHardwareDevice(ModernRoboticsI2cRangeSensor.class, "Range Sensor");
 
         //right.setDirection(DcMotorSimple.Direction.REVERSE);
