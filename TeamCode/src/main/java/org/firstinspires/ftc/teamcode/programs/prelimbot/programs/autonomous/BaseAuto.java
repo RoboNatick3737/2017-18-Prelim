@@ -66,7 +66,7 @@ public abstract class BaseAuto extends HardwareBase {
     }
 
 
-    
+
 
 
     private void hailTheSoviets() {
