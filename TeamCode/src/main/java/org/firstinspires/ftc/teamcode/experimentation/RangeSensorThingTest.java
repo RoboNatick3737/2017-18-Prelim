@@ -17,7 +17,7 @@ public class RangeSensorThingTest extends OpMode
 
     @Override
     public void init() {
-        sensor = hardwareMap.get(ModernRoboticsI2cRangeSensor.class, "range");
+        sensor = hardwareMap.get(ModernRoboticsI2cRangeSensor.class, "Range Sensor");
         sensor.setI2cAddress(I2cAddr.create8bit(0x10));
     }
 
