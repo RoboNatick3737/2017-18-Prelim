@@ -15,7 +15,7 @@ public class TestTouchSensor extends HardwareBase{
         ProcessConsole processConsole = log.newProcessConsole("Range Sensor");
 
         while(true){
-            touchSensor.
+            //touchSensor.
         }
 
     }

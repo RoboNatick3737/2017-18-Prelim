@@ -108,6 +108,8 @@ public class PrelimBotTeleop extends HardwareBase
                     "Bottom clamps are currently " + (bottomClampsClosed ? "closed" : "open")
             );
 
+            processConsole.write("Range = " + rangeSensor.cmUltrasonic());
+
             Flow.yield();
         }
     }
