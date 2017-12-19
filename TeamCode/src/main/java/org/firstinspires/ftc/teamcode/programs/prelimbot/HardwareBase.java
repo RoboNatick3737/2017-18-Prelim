@@ -7,6 +7,7 @@ import com.qualcomm.hardware.modernrobotics.ModernRoboticsTouchSensor;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.I2cAddr;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 
@@ -66,12 +67,17 @@ public abstract class HardwareBase extends Core
 
         swingServo         = initHardwareDevice(Servo.class, "Swing Servo");
 
-        colorSensor        = initHardwareDevice(ColorSensor.class, "Color Sensor");
+        //colorSensor        = initHardwareDevice(ColorSensor.class, "Color Sensor");
 
-        rangeSensor        = initHardwareDevice(ModernRoboticsI2cRangeSensor.class, "Range Sensor");
+        rangeSensor        = hardwareMap.get(ModernRoboticsI2cRangeSensor.class, "Range Sensor");
 
+<<<<<<< HEAD
         touchSensor        = initHardwareDevice(ModernRoboticsTouchSensor.class, "Touch Sensor");
 
         //right.setDirection(DcMotorSimple.Direction.REVERSE);
+=======
+        rangeSensor.setI2cAddress(I2cAddr.create8bit(0x10));
+        right.setDirection(DcMotorSimple.Direction.REVERSE);
+>>>>>>> 6b92827bfb415873246ac0d8e9e534d501bb31f7
     }
 }
