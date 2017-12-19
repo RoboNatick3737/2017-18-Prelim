@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.programs.prelimbot;
 import android.hardware.Sensor;
 
 import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cRangeSensor;
+import com.qualcomm.hardware.modernrobotics.ModernRoboticsTouchSensor;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -26,6 +27,7 @@ public abstract class HardwareBase extends Core
     protected Servo topLeftGrabber, topRightGrabber, bottomLeftGrabber, bottomRightGrabber, swingServo;
     protected ColorSensor colorSensor;
     protected ModernRoboticsI2cRangeSensor rangeSensor;
+    protected ModernRoboticsTouchSensor touchSensor;
 
     // Constants to open and close grabber clamps.
     private static final double
@@ -67,6 +69,8 @@ public abstract class HardwareBase extends Core
         colorSensor        = initHardwareDevice(ColorSensor.class, "Color Sensor");
 
         rangeSensor        = initHardwareDevice(ModernRoboticsI2cRangeSensor.class, "Range Sensor");
+
+        touchSensor        = initHardwareDevice(ModernRoboticsTouchSensor.class, "Touch Sensor");
 
         //right.setDirection(DcMotorSimple.Direction.REVERSE);
     }
