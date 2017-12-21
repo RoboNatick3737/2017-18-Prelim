@@ -71,13 +71,10 @@ public abstract class HardwareBase extends Core
 
         rangeSensor        = hardwareMap.get(ModernRoboticsI2cRangeSensor.class, "Range Sensor");
 
-<<<<<<< HEAD
         touchSensor        = initHardwareDevice(ModernRoboticsTouchSensor.class, "Touch Sensor");
 
         //right.setDirection(DcMotorSimple.Direction.REVERSE);
-=======
         rangeSensor.setI2cAddress(I2cAddr.create8bit(0x10));
         right.setDirection(DcMotorSimple.Direction.REVERSE);
->>>>>>> 6b92827bfb415873246ac0d8e9e534d501bb31f7
     }
 }
